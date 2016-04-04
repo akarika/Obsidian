@@ -1,79 +1,129 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-// la base du site (font,)
-body{
+body {
   margin: 0;
-color:white;
-background: url('background.jpg') repeat fixed;
-background-size: cover;
-font-family: 'Open Sans', sans-serif;
-  }
-
-
-  // barre de nvigation
-.nav{
-  display:flex;
+  color: white;
+  background: url('background.jpg') repeat fixed;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  margin: auto;
+  max-width: 960px;
+}
+section{
+  margin-bottom: 5em;
+}
+// Barre de navigation
+@mixin container {
+  display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+}
+.container-flex-header {
+  @include container;
+  margin-top: 2.5em;
+  align-items: center;
+  justify-content: center;
+  li {
+    margin-right: 2em;
+  }
+  ul {
+    list-style-type: none;
+    display: inline-flex;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1 {
+    margin-top: 3em;
+    font-size: 5em;
+    font-weight: 300;
+  }
+  p {
+    margin-top: -9em;
+  }
+}
+// partie videos
+.container-flex-title {
+  @include container;
+  justify-content: space-between;
+  margin-top: 15em;
+  margin-bottom: 1em;
+}
+.container-flex-video{
+@include container;
+justify-content: space-between;
+  img {
+    width: 300px;
+    height: 200px;
+  }table{
+    border:1px solid red;
+  }
+}
+// UPCOMING GIGS
+.container-flex-tab{
+  @include container;
+}
+table {
+  border-collapse: collapse;
+  thead {
+    vertical-align: middle;
+    font-size: 1.5em;
+  }
+  td {
+    width: 320px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    height: 2.5em;
+  }
+}
+.second_cellule {
+  text-align: left;
+  span {
+    margin-left: 10em;
+  }
+}
+.first_cellule {
+  span {
+    margin-left: 5em;
+  }
+}
+
+.center {
+  display: flex;
   justify-content: center;
   align-items: center;
-    word-spacing: 2.5em;
-    font-weight: lighter;
-    margin-top: 4em;
+  font-weight: lighter;
+  padding-bottom: 5em;
+  border-bottom: 1px solid grey;
 }
-li{
-  list-style-type:none;
-  display: inline-flex;
+// bio
+.container-flex-bio{
+  @include container;
+  justify-content: space-between;
+  div{
+    width: 320px;
+  }img{
+    width: 300px;
+    height: 300px;
+  }
 }
-a{
-  text-decoration: none;
 
+// footer
+.container-flex-footer {
+  @include container;
+  border-top: 1px solid grey;
+  align-items: center;
+  justify-content: center;
+  ul {
+    list-style-type: none;
+    display: inline-flex;
+  }li{
+    margin-right: 2em;
+  }
 }
-// .nav-projet{
-//   display:flex;
-//   flex-direction: column;
-//   flex-wrap: nowrap;
-//   justify-content: center;
-//   align-items: center;
-//     margin-top: 2em;
-//     font-size: 5em;
-//     font-weight: lighter;
-// }
-// gestions des colonnes
-section {
-  max-width: 960px;
-  margin: 0 auto;
-  display: flex;
-
-}
-.column {
-  margin :0;
-  flex-grow: 1;
-flex-shrink: 1;
-width: 320px;
-flex-basis: 0;
-}
-.column_small {
-  margin :0;
-  flex-grow: 1;
-flex-shrink: 1;
-width: 320px;
-flex-basis: 0;
-}
-.column-video>img{
-  width: 300px;
-  height: 200px;
-}
-.column_large{
-  margin :0;
-  flex-grow: 1;
-flex-shrink: 1;
-width: 960px;
-flex-basis: 0;
-}
-.column_large>h1{
+.container-flex-footer-by{
+  @include container;
+  justify-content: center;
 
 }
