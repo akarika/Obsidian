@@ -3,7 +3,7 @@
     <nav>
       <ul>
         <li>
-          <a href="#">HOME</a>
+          <%= link_to"HOME",root_path%>
         </li>
         <li>
           <a href="#">BIO
@@ -16,26 +16,18 @@
           <a href="#">MUSIC</a>
         </li>
         <li>
-          <a href="#videos">VIDEOS</a>
-        </li>
-        <li>
-          <a href="#">NEWS</a>
-        </li>
-        <li>
-          <a href="#tour">TOUR</a>
-        </li>
-        <li>
-          <a href="#">CONTACT</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <article>
-      <div class="container-flex-header">
-        <h1>PROJET AUDIO</h1>
-      </div>
-      <div class="container-flex-header">
-        <p>SUBTITLE...</p>
-      </div>
-</article>
+          <%= link_to"VIDEOS",root_path(anchor:"videos")%></a>
+      </li>
+      <li>
+        <%= link_to"NEWS",articles_path	%></a>
+    </li>
+    <li>
+      <a href="#tour">TOUR</a>
+    </li>
+    <li>
+      <a href="#">CONTACT</a>
+    </li>
+  </ul>
+</nav>
+</div>
 </header>

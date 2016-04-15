@@ -11,6 +11,9 @@
       <%= image_tag('album.jpg') %></div>
     <div>
       <p>RECENT POSTS</p>
+      <% @articles.each do |a|%>
+      <%= a.title %>
+      <%end%>
     </div>
   </div>
 </section>

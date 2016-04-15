@@ -1,0 +1,39 @@
+<div class="form-style-8 ">
+<%= form_for @article do |f| %>
+
+<% if @article.errors.any? %>
+<div id="error_explanation">
+  <h2>Votre article
+    <%= pluralize(@article.errors.count, "error") %>
+    ont été trouvés:
+  </h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<p>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label :article %><br>
+  <%= f.text_area :content , onkeyup:"adjust_textarea(this)"%>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
+</div>
+<script type="text/javascript">
+function adjust_textarea(h) {
+    h.style.height = "20px";
+    h.style.height = (h.scrollHeight)+"px";
+}
+</script>

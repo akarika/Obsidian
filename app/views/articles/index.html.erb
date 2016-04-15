@@ -1,8 +1,10 @@
-<% @articles.each do |a| %>
-<h2><%= a.title%></h2><br>
-<p><%= a.content[0..200]%></p>
-<%= link_to"Mettre à jour",edit_article_path(a)%>
-<%= link_to"Voire l'article",article_path(a)%>
-<%= link_to"Supprimer l'article",article_path(a), data:{confirm:"Etes-vous sûre?"},method: 'delete' %>
-<%end%>
-<%= link_to "Nouveau article",new_article_path%>
+<div class="index_article">
+  <% @articles.each do |a| %>
+  <h2><%= a.title%></h2><br>
+  <p><%= a.content[0..200]%></p>
+  <%= link_to"Mettre à jour",edit_article_path(a)%>
+  <%= link_to"Voire l'article",article_path(a)%>
+  <%= link_to"Supprimer l'article",article_path(a), data:{confirm:"Etes-vous sûre?"},method: 'delete' %>
+  <%end%>
+  <%= link_to "Nouveau article",new_article_path%>
+  </div>

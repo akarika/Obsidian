@@ -27,7 +27,7 @@ end
   def update
     @article = Article.find(params[:id])
 
-    if @article.update(article_update)
+    if @article.update(article_params)
       redirect_to @article
     else
       render 'edit'
@@ -48,8 +48,5 @@ end
 
   def article_params
     params.require(:article).permit(:title, :content)
-  end
-  def article_update
-    params.require(:article).permit(:content)
   end
 end
