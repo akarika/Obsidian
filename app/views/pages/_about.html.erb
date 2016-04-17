@@ -1,18 +1,18 @@
-
 <section>
   <div class="container-flex-bio">
     <div>
-      <p>ABOUT OBSIDIAN</p><br>
-      <p>The Obsidian theme, like the naturally occurring volcanic glass of the same name, possesses an inherent allure that's stylish in appearance and practical in purpose.With distinctive background options and various customization possibilities,
-        Obsidian makes it easy to create ultimate hub for our online identity.</p>
+      <p class="p_style">ABOUT OBSIDIAN</p><br>
+      <p class="p_content">The Obsidian theme, like the naturally occurring volcanic glass of the same name, possesses an inherent allure that's stylish in appearance and practical in purpose.With distinctive background options and various customization
+        possibilities, Obsidian makes it easy to create ultimate hub for our online identity.</p>
     </div>
     <div>
-      <p>VIVIENNE'S OMITTED LINE</p>
+      <p class="p_style">VIVIENNE'S OMITTED LINE</p>
       <%= image_tag('album.jpg') %></div>
     <div>
-      <p>RECENT POSTS</p>
+      <p class="p_style">RECENT POSTS</p><br>
       <% @articles.each do |a|%>
-      <%= a.title %>
+      <p class="p_posts_title"><%= link_to (a.title), controller: "articles", action: "show", id: a%></p>
+      <p class="p_post_time"><%= a.updated_at.strftime("%B %d, %Y").upcase%></p>
       <%end%>
     </div>
   </div>

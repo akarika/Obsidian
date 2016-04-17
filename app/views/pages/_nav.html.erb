@@ -5,8 +5,12 @@
         <li>
           <%= link_to"HOME",root_path%>
         </li>
+        <% if user_signed_in?%>
+        <li><%=link_to"LOG OUT",destroy_user_session_path ,method: :delete%></li>
+        <li><%= link_to"EDIT",edit_user_registration_path%></li>
+        <%end%>
         <li>
-          <a href="#">BIO
+          <a href="#contact">BIO
           </a>
         </li>
         <li>
@@ -16,7 +20,7 @@
           <a href="#">MUSIC</a>
         </li>
         <li>
-          <%= link_to"VIDEOS",root_path(anchor:"videos")%></a>
+          <a href="#videos">VIDEOS</a>
       </li>
       <li>
         <%= link_to"NEWS",articles_path	%></a>
@@ -25,7 +29,9 @@
       <a href="#tour">TOUR</a>
     </li>
     <li>
-      <a href="#">CONTACT</a>
+      <%= link_to"SIGN",new_user_session_path%>
+    </li>
+    <li>
     </li>
   </ul>
 </nav>

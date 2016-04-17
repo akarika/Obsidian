@@ -22,7 +22,3 @@ $(document).ready(function() {
     return false;
   });
 });
-
-$(.index_article).ready(function(){
-  $(".index_article").fadeIn(400)
-  });

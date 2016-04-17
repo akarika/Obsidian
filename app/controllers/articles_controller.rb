@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: [:destroy, :edit, :update, :create, :new]
   def index
     @articles = Article.all
   end
@@ -15,20 +16,21 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-
   def new
     @article = Article.new
-end
+    @h2_form="NEW"
+  end
 
   def edit
     @article = Article.find(params[:id])
+    @h2_form="UPDATE"
   end
 
   def update
     @article = Article.find(params[:id])
-
     if @article.update(article_params)
       redirect_to @article
+      flash[:notice]="Article Update"
     else
       render 'edit'
     end
